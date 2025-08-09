@@ -23,7 +23,7 @@
     "lint": "biome check src",
     "lint:fix": "biome check src --write",
     "build": "tsc",
-    "test": "vitest",
+    "test": "vitest run",
     "coverage": "vitest run --coverage",
     "prepublish": "npm run build",
     "prepare": "husky",
@@ -46,15 +46,15 @@
     "@tsconfig/recommended": "^1.0.3",
     "@tsconfig/strictest": "^2.0.2",
     "@types/node": "^20.12.12",
-    "@vitest/coverage-v8": "^3.0.5",
-    "@vitest/ui": "^3.0.5",
+    "@vitest/coverage-v8": "^3.2.4",
+    "@vitest/ui": "^3.2.4",
     "happy-dom": "^16.7.1",
     "husky": "^9.0.11",
     "lint-staged": "^15.2.0",
     "prettier": "^3.0.2",
     "semantic-release": "^24.0.0",
     "typescript": "^5.2.2",
-    "vitest": "^3.0.5"
+    "vitest": "^3.2.4"
   },
   "dependencies": {
     "@datadog/browser-logs": "^4.0.0 || ^5.0.0",
