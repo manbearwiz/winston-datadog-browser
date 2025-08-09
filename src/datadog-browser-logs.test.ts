@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/unbound-method */
 import { datadogLogs } from '@datadog/browser-logs';
 import { beforeEach, describe, expect, test, vi } from 'vitest';
 import winston from 'winston';
