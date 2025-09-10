@@ -1,0 +1,37 @@
+output:
+  - failure
+
+pre-commit:
+  parallel: true
+  commands:
+    format:
+      glob: "*.{js,ts,cjs,mjs,d.cts,d.mts,jsx,tsx,json,jsonc}"
+      run: npx @biomejs/biome check --write --no-errors-on-unmatched --files-ignore-unknown=true {staged_files}
+      stage_fixed: true
+    test:
+      glob: "*.ts"
+      run: npx vitest related --run {staged_files}
+      fail_text: "Tests failed"
+      env:
+        TERM: dumb
+    package-sync:
+      glob: "package*.json"
+      run: npm ls --depth=0 --silent
+      fail_text: "Package.json and package-lock.json are out of sync. Run 'npm install' to fix."
+
+commit-msg:
+  parallel: false
+  commands:
+    commitlint:
+      run: npx --no -- commitlint --edit {1}
+      fail_text: "Commit message doesn't follow conventional commits format"
+
+pre-push:
+  parallel: true
+  commands:
+    test:
+      run: npx vitest --run --coverage
+      fail_text: "Tests failed"
+    check-format:
+      run: npx @biomejs/biome check --no-errors-on-unmatched --files-ignore-unknown=true .
+      fail_text: "Code formatting issues found"

@@ -26,7 +26,7 @@
     "test": "vitest run",
     "coverage": "vitest run --coverage",
     "prepublish": "npm run build",
-    "prepare": "husky",
+    "prepare": "lefthook install",
     "semantic-release": "semantic-release"
   },
   "repository": {
@@ -49,8 +49,7 @@
     "@vitest/coverage-v8": "^3.2.4",
     "@vitest/ui": "^3.2.4",
     "happy-dom": "^16.7.1",
-    "husky": "^9.0.11",
-    "lint-staged": "^15.2.0",
+    "lefthook": "^1.12.4",
     "prettier": "^3.0.2",
     "semantic-release": "^24.0.0",
     "typescript": "^5.2.2",
@@ -60,10 +59,6 @@
     "@datadog/browser-logs": "^4.0.0 || ^5.0.0",
     "winston": "^3.3.3",
     "winston-transport": "^4.4.0"
-  },
-  "lint-staged": {
-    "*.ts": "vitest related --run",
-    "*": "biome check --no-errors-on-unmatched --files-ignore-unknown=true --write"
   },
   "release": {
     "branches": [
