@@ -20,18 +20,18 @@
     "winston"
   ],
   "scripts": {
-    "lint": "biome check src",
-    "lint:fix": "biome check src --write",
+    "lint": "LEFTHOOK_OUTPUT=\"success,failure,summary\" lefthook run --force --all-files pre-push",
+    "lint:fix": "LEFTHOOK_OUTPUT=\"success,failure,summary\" lefthook run --force --all-files pre-commit",
     "build": "tsc",
     "test": "vitest run",
     "coverage": "vitest run --coverage",
     "prepublish": "npm run build",
-    "prepare": "lefthook install",
+    "prepare": "git config --unset core.hooksPath 2>/dev/null || true && rm -rf .husky 2>/dev/null || true && lefthook install",
     "semantic-release": "semantic-release"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/manbearwiz/winston-datadog-browser.git"
+    "url": "git+https://github.com/manbearwiz/winston-datadog-browser.git"
   },
   "author": "Kevin Brey",
   "license": "MIT",
