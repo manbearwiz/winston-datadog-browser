@@ -45,7 +45,6 @@
     "@commitlint/config-angular": "^20.0.0",
     "@tsconfig/recommended": "^1.0.3",
     "@tsconfig/strictest": "^2.0.2",
-    "@types/node": "^22.17.1",
     "@vitest/coverage-v8": "^4.0.16",
     "@vitest/ui": "^4.0.16",
     "happy-dom": "^20.0.0",
