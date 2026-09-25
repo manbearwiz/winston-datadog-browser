@@ -46,7 +46,7 @@
     "@tsconfig/recommended": "^1.0.3",
     "@tsconfig/strictest": "^2.0.2",
     "@vitest/coverage-v8": "^4.0.16",
-    "@vitest/ui": "^4.0.16",
+    "@vitest/ui": "^5.0.1",
     "happy-dom": "^20.0.0",
     "lefthook": "^2.0.4",
     "semantic-release": "^25.0.2",
